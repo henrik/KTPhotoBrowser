@@ -10,6 +10,7 @@
 #import "KTThumbsViewController.h"
 #import "PhotoPickerController.h"
 #import "Photos.h"
+#import "AsyncPhotos.h"
 
 
 @class Photos;
@@ -17,6 +18,7 @@
 @interface RootViewController : KTThumbsViewController <PhotoPickerControllerDelegate, PhotosDelegate> {
    PhotoPickerController *photoPicker_;
    Photos *myPhotos_;
+   AsyncPhotos *myAsyncPhotos_;
    UIActivityIndicatorView *activityIndicatorView_;
    UIWindow *window_;
 }

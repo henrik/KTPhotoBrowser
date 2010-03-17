@@ -32,6 +32,8 @@
 		AFFB125C1151987D00BCB9E4 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB12581151987D00BCB9E4 /* UIImageView+WebCache.m */; };
 		AFFB127911519A6F00BCB9E4 /* KTPhotoView+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB127611519A6F00BCB9E4 /* KTPhotoView+SDWebImage.m */; };
 		AFFB127A11519A6F00BCB9E4 /* KTThumbView+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB127811519A6F00BCB9E4 /* KTThumbView+SDWebImage.m */; };
+		AFFB128711519B4C00BCB9E4 /* AsyncPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB128611519B4C00BCB9E4 /* AsyncPhotos.m */; };
+		AFFB128911519C1400BCB9E4 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFB128811519C1400BCB9E4 /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,9 @@
 		AFFB127611519A6F00BCB9E4 /* KTPhotoView+SDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KTPhotoView+SDWebImage.m"; sourceTree = "<group>"; };
 		AFFB127711519A6F00BCB9E4 /* KTThumbView+SDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KTThumbView+SDWebImage.h"; sourceTree = "<group>"; };
 		AFFB127811519A6F00BCB9E4 /* KTThumbView+SDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KTThumbView+SDWebImage.m"; sourceTree = "<group>"; };
+		AFFB128511519B4C00BCB9E4 /* AsyncPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncPhotos.h; sourceTree = "<group>"; };
+		AFFB128611519B4C00BCB9E4 /* AsyncPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncPhotos.m; sourceTree = "<group>"; };
+		AFFB128811519C1400BCB9E4 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,8 @@
 				6813F455112093BB006B7215 /* UIImage+KTCategory.m */,
 				68B8F54B112308DF00C16B8D /* Photos.h */,
 				68B8F54C112308DF00C16B8D /* Photos.m */,
+				AFFB128511519B4C00BCB9E4 /* AsyncPhotos.h */,
+				AFFB128611519B4C00BCB9E4 /* AsyncPhotos.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AFFB128811519C1400BCB9E4 /* placeholder.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Sample-Info.plist */,
 				68316E361124726F00A906B3 /* KTPhotoBrowser.bundle */,
@@ -265,6 +273,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				68316E371124726F00A906B3 /* KTPhotoBrowser.bundle in Resources */,
+				AFFB128911519C1400BCB9E4 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +303,7 @@
 				AFFB125C1151987D00BCB9E4 /* UIImageView+WebCache.m in Sources */,
 				AFFB127911519A6F00BCB9E4 /* KTPhotoView+SDWebImage.m in Sources */,
 				AFFB127A11519A6F00BCB9E4 /* KTThumbView+SDWebImage.m in Sources */,
+				AFFB128711519B4C00BCB9E4 /* AsyncPhotos.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,7 @@
 
 - (void)dealloc {
    [myPhotos_ release], myPhotos_ = nil;
+   [myAsyncPhotos_ release], myAsyncPhotos_ = nil;
    [activityIndicatorView_ release], activityIndicatorView_ = nil;
    
    [super dealloc];
@@ -47,7 +48,13 @@
       myPhotos_ = [[Photos alloc] init];
       [myPhotos_ setDelegate:self];
    }
-   [self setDataSource:myPhotos_];
+   //[self setDataSource:myPhotos_];
+  
+   if (myAsyncPhotos_ == nil) {
+     myAsyncPhotos_ = [[AsyncPhotos alloc] init];
+   }
+   [self setDataSource:myAsyncPhotos_];
+  
    [self loadPhotos];
 //   [self setPhotoBackgroundColor:[UIColor blueColor]];
 }
