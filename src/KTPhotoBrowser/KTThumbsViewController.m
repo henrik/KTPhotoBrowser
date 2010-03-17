@@ -8,7 +8,7 @@
 
 #import "KTThumbsViewController.h"
 #import "KTPhotoScrollViewController.h"
-
+#import "KTThumbView+SDWebImage.h"
 
 @interface KTThumbsViewController (Private)
 @end
@@ -127,7 +127,13 @@
       [thumbView setTag:i];
       
       UIImage *thumbImage = [dataSource_ thumbImageAtIndex:i];
-      [thumbView setThumbImage:thumbImage];
+
+      if ([dataSource_ respondsToSelector:@selector(thumbUrlStringAtIndex:)]) {
+        NSURL *url = [NSURL URLWithString:[dataSource_ thumbUrlStringAtIndex:i]];
+        [thumbView setImageWithURL:url placeholderImage:thumbImage];
+      } else {
+        [thumbView setThumbImage:thumbImage];
+      }
 
       [scrollView_ addSubview:thumbView];
       [thumbView release];

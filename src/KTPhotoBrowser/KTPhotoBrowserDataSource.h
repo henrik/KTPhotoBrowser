@@ -16,6 +16,8 @@
 - (UIImage *)thumbImageAtIndex:(NSInteger)index;
 
 @optional
+- (NSString *)urlStringAtIndex:(NSInteger)index;
+- (NSString *)thumbUrlStringAtIndex:(NSInteger)index;
 - (void)deleteImageAtIndex:(NSInteger)index;
 - (CGSize)thumbSize;
 - (NSInteger)thumbsPerRow;

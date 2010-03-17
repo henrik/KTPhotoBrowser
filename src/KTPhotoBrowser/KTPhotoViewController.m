@@ -10,6 +10,7 @@
 #import "KTPhotoBrowserDataSource.h"
 #import "KTPhotoScrollViewController.h"
 #import "KTPhotoView.h"
+#import "KTPhotoView+SDWebImage.h"
 
 
 @implementation KTPhotoViewController
@@ -68,7 +69,13 @@
 - (void)setImage:(id)data {
    if (photoIndex_ < [dataSource_ numberOfPhotos]) {
       UIImage *image = [dataSource_ imageAtIndex:photoIndex_];
-      [imageView_ setImage:image];
+     
+      if ([dataSource_ respondsToSelector:@selector(urlStringAtIndex:)]) {
+        NSURL *url = [NSURL URLWithString:[dataSource_ urlStringAtIndex:photoIndex_]];
+        [imageView_ setImageWithURL:url placeholderImage:image];
+      } else {
+        [imageView_ setImage:image];
+      }
    }
 }
 
