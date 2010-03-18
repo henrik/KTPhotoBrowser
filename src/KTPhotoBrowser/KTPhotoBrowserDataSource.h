@@ -19,5 +19,6 @@
 - (void)deleteImageAtIndex:(NSInteger)index;
 - (CGSize)thumbSize;
 - (NSInteger)thumbsPerRow;
+- (BOOL)thumbsHaveBorder;
 
 @end
