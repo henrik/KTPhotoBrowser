@@ -58,13 +58,6 @@ const CGFloat ktkDefaultToolbarHeight = 44;
 
 // TODO: set toolbar as footer view
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-  CGRect viewFrame = self.view.frame;
-  
-  CGRect toolbarFrame = CGRectMake(0, 
-                                   viewFrame.size.height - ktkDefaultToolbarHeight, 
-                                   viewFrame.size.width, 
-                                   ktkDefaultToolbarHeight);
-  toolbar_.frame = toolbarFrame;
   [self setScrollViewContentSizeWithPageCount:pageCount_];
   [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];  
 }
@@ -144,6 +137,7 @@ const CGFloat ktkDefaultToolbarHeight = 44;
                                     screenFrame.size.width, 
                                     ktkDefaultToolbarHeight);
    toolbar_ = [[UIToolbar alloc] initWithFrame:toolbarFrame];
+   toolbar_.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
    [toolbar_ setBarStyle:[self navigationBarStyle]];
    [toolbar_ setTranslucent:YES];
    [toolbar_ setItems:[NSArray arrayWithObjects:
