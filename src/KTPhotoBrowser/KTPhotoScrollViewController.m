@@ -59,6 +59,8 @@ const CGFloat ktkDefaultToolbarHeight = 44;
 // TODO: set toolbar as footer view
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
   [self setScrollViewContentSizeWithPageCount:pageCount_];
+  [self autoScrollToIndex:[currentPhoto_ photoIndex]];
+    
   [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];  
 }
 
