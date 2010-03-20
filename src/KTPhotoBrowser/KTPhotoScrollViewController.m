@@ -51,6 +51,24 @@ const CGFloat ktkDefaultToolbarHeight = 44;
 @synthesize statusbarHidden = statusbarHidden_;
 @synthesize photoBackgroundColor = photoBackgroundColor_;
 
+// Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+  return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+// TODO: set toolbar as footer view
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+  CGRect viewFrame = self.view.frame;
+  
+  CGRect toolbarFrame = CGRectMake(0, 
+                                   viewFrame.size.height - ktkDefaultToolbarHeight, 
+                                   viewFrame.size.width, 
+                                   ktkDefaultToolbarHeight);
+  toolbar_.frame = toolbarFrame;
+  [self setScrollViewContentSizeWithPageCount:pageCount_];
+  [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];  
+}
+
 
 - (void)dealloc {
    [nextButton_ release], nextButton_ = nil;
@@ -83,6 +101,7 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    CGRect scrollFrame = [[UIScreen mainScreen] bounds];
    scrollFrame.size.width += CONTENT_OFFSET;
    UIScrollView *newView = [[UIScrollView alloc] initWithFrame:scrollFrame];
+   newView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
    [newView setDelegate:self];
    [newView setBackgroundColor:self.photoBackgroundColor];
    [newView setPagingEnabled:YES];

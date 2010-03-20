@@ -41,6 +41,7 @@
    
    CGRect frame = [[UIScreen mainScreen] bounds];
    KTPhotoView *newView = [[KTPhotoView alloc] initWithFrame:frame];
+   newView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
    [newView setBackgroundColor:[UIColor clearColor]];
 
    [[self view] addSubview:newView];
